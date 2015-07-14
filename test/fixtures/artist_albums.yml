@@ -1,0 +1,11 @@
+one:
+  artist_id: 1
+  album_id: 1
+
+two:
+  artist_id: 1
+  album_id: 2
+
+three:
+  artist_id: 2
+  album_id: 3

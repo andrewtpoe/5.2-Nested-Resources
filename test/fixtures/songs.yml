@@ -1,0 +1,17 @@
+one:
+  title: Sheep
+  length: 200
+  artist_id: 1
+  album_id: 1
+
+two:
+  title: Breathe
+  length: 237
+  artist_id: 1
+  album_id: 2
+
+three:
+  title: Miracle Drug
+  length: 319
+  artist_id: 2
+  album_id: 3

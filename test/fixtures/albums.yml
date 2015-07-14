@@ -1,0 +1,11 @@
+one:
+  title: Animals
+  artwork: picture_link
+
+two:
+  title: The Dark Side of the Moon
+  artwork: another_picture_link
+
+three:
+  title: How to Dismantle an Atomic Bomb
+  artwork: big_boom_picture_link
