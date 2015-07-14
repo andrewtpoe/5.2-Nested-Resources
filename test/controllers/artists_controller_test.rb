@@ -62,7 +62,7 @@ class ArtistsControllerTest < ActionController::TestCase
       assert_redirected_to artist_path(@artist)
     end
 
-    test 'renders new with INvalid attributes' do
+    test 'renders edit with INvalid attributes' do
       old_name = @artist.name
       new_name = ''
       patch :update, id: @artist, artist: { name: new_name }
