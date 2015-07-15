@@ -1,0 +1,9 @@
+<h1>Edit album: <%= @album.title %></h1>
+
+<%= form_for @album do |f| %>
+  <%= f.label "Album Title *" %>
+  <%= f.text_field :title, value: @album.title %>
+  <%= f.label "Album Artwork (link)" %>
+  <%= f.text_field :artwork, value: @album.artwork %>
+  <%= f.submit 'Submit' %>
+<% end %>

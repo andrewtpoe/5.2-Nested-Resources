@@ -9,7 +9,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :albums, except: [:index, :show]
+  resources :albums
 
-  resources :songs, except: [:index, :show]
+  resources :songs
+  
 end

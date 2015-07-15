@@ -1,0 +1,5 @@
+<h1>Browse our artists</h1>
+
+<% @artists.each do |a| %>
+  <h3><%= link_to "#{a.name}", artist_path(a.id) %></h3>
+<% end %>

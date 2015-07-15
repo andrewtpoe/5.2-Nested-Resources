@@ -1,0 +1,10 @@
+<h1><%= "Albums & Songs by #{@artist.name}" %></h1>
+
+<h3><%= link_to 'Add Album', new_artist_album_path(artist_id: @artist.id) %></h3>
+
+<% @artist.albums.each do |album| %>
+  <h3><%= album.title %></h3>
+  <%= link_to 'Edit Album', edit_artist_album_path(artist_id: @artist.id, id: album.id) %>
+  <%= link_to 'Delete Album', artist_album_path(artist_id: @artist.id, id: album.id), confirm: "Are you sure?", method: :delete %>
+
+<% end %>

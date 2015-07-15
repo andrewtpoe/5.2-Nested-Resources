@@ -1,13 +1,18 @@
 class AlbumsController < ApplicationController
 
   def new
+    if params['artist_id']
+      @artist = get_artist
+    end
     @album = Album.new
   end
 
   def create
     @album = Album.new(album_params)
     if @album.save
-      redirect_to album_path(@album)
+      @artist = get_artist
+      @artist_album = ArtistAlbum.create(artist: @artist, album: @album)
+      redirect_to artist_path(@artist.id)
     else
       render :new
     end
@@ -19,8 +24,9 @@ class AlbumsController < ApplicationController
 
   def update
     @album = get_album
+    joint = ArtistAlbum.find_by(album_id: @album.id)
     if @album.update_attributes(album_params)
-      redirect_to album_path(@album)
+      redirect_to artist_path(joint.artist_id)
     else
       render :edit
     end
@@ -28,8 +34,11 @@ class AlbumsController < ApplicationController
 
   def destroy
     @album = get_album
+    joint = ArtistAlbum.find_by(album_id: @album.id)
+    artist_id = joint.artist_id
+    joint.destroy
     @album.destroy
-    redirect_to album_path
+    redirect_to artist_path(artist_id)
   end
 
   private
@@ -42,4 +51,7 @@ class AlbumsController < ApplicationController
     Album.find(params[:id])
   end
 
+  def get_artist
+    Artist.find(params['artist_id'])
+  end
 end

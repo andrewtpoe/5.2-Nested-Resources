@@ -1,0 +1,27 @@
+<h1>Create a new album for: <%= @artist.name %></h1>
+
+<% binding.pry %>
+<%= form_for @album do |f| %>
+  <%= hidden_field_tag :artist_id, @artist.id %>
+  <%= f.label "Album Title *" %>
+  <%= f.text_field :title %>
+  <%= f.label "Album Artwork (link)" %>
+  <%= f.text_field :artwork %>
+  <%= f.submit 'Submit' %>
+<% end %>
+
+
+
+
+<%# f.fields_for :memberships do |m| %>
+  <%# m.text_field :task %>
+  <%# m.fields_for :clubs do |s| %>
+    <%# s.text_field :name %>
+  <%# end %>
+<%# end %>
+
+<%# form_for @article, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+  <%# f.text_field :title %>
+  <%# f.text_area :body, size: "60x12" %>
+  <%# f.submit "Create" %>
+<%# end %>
